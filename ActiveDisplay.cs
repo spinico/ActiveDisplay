@@ -89,7 +89,7 @@
                     {
                         WINDOWPOS windowPos = (WINDOWPOS)Marshal.PtrToStructure(lParam, typeof(WINDOWPOS));
 
-                        if (Helpers.WindowChanged(windowPos))
+                        if (Helpers.WindowChanged(windowPos.flags))
                         {
                             // Get the monitor area that intersect the most with the specified rectangle
                             MonitorArea monitorArea = Helpers.GetMonitorArea(hWnd, new RECT

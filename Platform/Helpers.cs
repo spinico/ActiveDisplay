@@ -4,10 +4,10 @@
 
     internal static class Helpers
     {
-        internal static Func<WINDOWPOS, bool> WindowChanged = (windowPos) =>
+        internal static Func<SWP, bool> WindowChanged = (flags) =>
         {
-            return (windowPos.flags & SWP.NOMOVE) != SWP.NOMOVE ||
-                   (windowPos.flags & SWP.NOSIZE) != SWP.NOSIZE;
+            return (flags & SWP.NOMOVE) != SWP.NOMOVE ||
+                   (flags & SWP.NOSIZE) != SWP.NOSIZE;
         };
 
         internal static MonitorArea GetMonitorArea(IntPtr hWnd)
